@@ -9,15 +9,54 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    let mainView = MainView();
+    let mainView = MainView()
+    let networkService = NetworkService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view = mainView
-        print(mainView.number)
-        
+        mainView.idTextField.delegate = self
+        mainView.requestTextField.delegate = self
+        mainView.searchButton.addTarget(self, action: #selector(searchButtonAction), for: .touchUpInside)
     }
     
+    @objc func searchButtonAction() {
+        print("Button is pressed")
+        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
+            if error != nil { return }
+            
+            guard let orderData = orderData else { return }
+            
+            print(orderData)
+            
+        })
+    }
 
+    
+}
+
+extension MainViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+        UIView.transition(with: mainView.mainIcon, duration: 0.4,
+                          options: .curveEaseOut,
+                          animations: {
+                        self.mainView.mainIcon.layer.opacity = 0.0
+                         self.mainView.mainIcon.isHidden = true
+        })
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.transition(with: mainView.mainIcon, duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: {
+                         self.mainView.mainIcon.layer.opacity = 1.0
+                         self.mainView.mainIcon.isHidden = false
+        })
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
 }
 
