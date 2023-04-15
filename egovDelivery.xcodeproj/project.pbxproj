@@ -14,6 +14,9 @@
 		DEA6C6E429EAA0C6009CA77A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEA6C6E229EAA0C6009CA77A /* LaunchScreen.storyboard */; };
 		DEA6C6EC29EAB16F009CA77A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6C6EB29EAB16F009CA77A /* MainView.swift */; };
 		DEA6C6EE29EAB271009CA77A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6C6ED29EAB271009CA77A /* Constants.swift */; };
+		DEA6C6F029EAD4B1009CA77A /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6C6EF29EAD4B1009CA77A /* InputTextField.swift */; };
+		DEA6C6F229EB0AAD009CA77A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6C6F129EB0AAD009CA77A /* NetworkService.swift */; };
+		DEA6C6F529EB0B7B009CA77A /* OrderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA6C6F429EB0B7B009CA77A /* OrderData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		DEA6C6E529EAA0C6009CA77A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEA6C6EB29EAB16F009CA77A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DEA6C6ED29EAB271009CA77A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DEA6C6EF29EAD4B1009CA77A /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		DEA6C6F129EB0AAD009CA77A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		DEA6C6F429EB0B7B009CA77A /* OrderData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,13 +65,16 @@
 			isa = PBXGroup;
 			children = (
 				DEA6C6ED29EAB271009CA77A /* Constants.swift */,
+				DEA6C6F129EB0AAD009CA77A /* NetworkService.swift */,
 				DEA6C6EB29EAB16F009CA77A /* MainView.swift */,
+				DEA6C6EF29EAD4B1009CA77A /* InputTextField.swift */,
 				DEA6C6D729EAA0C5009CA77A /* AppDelegate.swift */,
 				DEA6C6D929EAA0C5009CA77A /* SceneDelegate.swift */,
 				DEA6C6DB29EAA0C5009CA77A /* MainViewController.swift */,
 				DEA6C6E029EAA0C6009CA77A /* Assets.xcassets */,
 				DEA6C6E229EAA0C6009CA77A /* LaunchScreen.storyboard */,
 				DEA6C6E529EAA0C6009CA77A /* Info.plist */,
+				DEA6C6F429EB0B7B009CA77A /* OrderData.swift */,
 			);
 			path = egovDelivery;
 			sourceTree = "<group>";
@@ -140,11 +149,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA6C6F529EB0B7B009CA77A /* OrderData.swift in Sources */,
+				DEA6C6F029EAD4B1009CA77A /* InputTextField.swift in Sources */,
 				DEA6C6EE29EAB271009CA77A /* Constants.swift in Sources */,
 				DEA6C6DC29EAA0C5009CA77A /* MainViewController.swift in Sources */,
 				DEA6C6EC29EAB16F009CA77A /* MainView.swift in Sources */,
 				DEA6C6D829EAA0C5009CA77A /* AppDelegate.swift in Sources */,
 				DEA6C6DA29EAA0C5009CA77A /* SceneDelegate.swift in Sources */,
+				DEA6C6F229EB0AAD009CA77A /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
