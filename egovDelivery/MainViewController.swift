@@ -7,13 +7,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
+    
+    let mainView = MainView();
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view = mainView
+        print(mainView.number)
+        
     }
-
+    
 
 }
 
