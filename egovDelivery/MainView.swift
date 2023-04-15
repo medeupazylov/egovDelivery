@@ -17,11 +17,10 @@ final class MainView: UIView {
     
     
     let mainStack: UIStackView = {
-        let stack = UIStackView
-        stack
+        let stack = UIStackView()
         
         return stack
-    }
+    } ()
     
     
     
