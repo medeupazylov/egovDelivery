@@ -2,6 +2,7 @@ import UIKit
 
 final class InputTextField: UIView {
     
+    let constants = Constants()
     let text: String
     var delegate: UITextFieldDelegate? {
         didSet{
@@ -21,6 +22,8 @@ final class InputTextField: UIView {
     }
     
     func setupView() {
+        self.layer.borderWidth = 2
+        self.layer.borderColor = constants.buttonColor.cgColor
         self.backgroundColor = .white
         self.layer.cornerRadius = 25.0
         self.addSubview(customTextField)
@@ -28,6 +31,7 @@ final class InputTextField: UIView {
     
     func setupLayout() {
         NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 50),
             customTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15),
             customTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             customTextField.topAnchor.constraint(equalTo: self.topAnchor),
@@ -39,7 +43,7 @@ final class InputTextField: UIView {
         let textField = UITextField()
         textField.backgroundColor = .white
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor : UIColor.black,  NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 15)! ])
+        textField.attributedPlaceholder = NSAttributedString(string: text, attributes: [NSAttributedString.Key.foregroundColor : UIColor.gray,  NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 15)! ])
         textField.layer.cornerRadius = 20.0
         textField.returnKeyType = .search
         return textField
