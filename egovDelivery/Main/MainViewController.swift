@@ -21,19 +21,23 @@ class MainViewController: UIViewController {
     }
     
     @objc func searchButtonAction() {
-        let userDetailsViewController = UserDetailsViewController()
-        userDetailsViewController.modalPresentationStyle = .fullScreen
-        presentDetail(userDetailsViewController)
+//        let userDetailsViewController = UserDetailsViewController()
+//        userDetailsViewController.modalPresentationStyle = .fullScreen
+//        presentDetail(userDetailsViewController)
         
         print("Button pressed")
-        networkService.performRequest(nationalId: "", requestId: "", completion: { [self] orderData, error in
-            if error != nil { return }
+        
+        networkService.makeRequest(nationalId: "020924551400", completion: {bmg, error in
             
-            guard let orderData = orderData else { return }
+            guard let bmg = bmg else {
+                return
+            }
+            print(bmg.firstName)
+
             
-//            print(orderData)
-            userDetailsViewController.orderData = orderData
         })
+        
+    
     }
     
     private func presentDetail(_ viewControllerToPresent: UIViewController) {
