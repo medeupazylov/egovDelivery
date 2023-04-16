@@ -13,6 +13,8 @@ class UserDetailsViewController: UIViewController {
     var orderData : OrderData?{
         didSet{
             guard let data = orderData else {return}
+//            print(data)
+            print("we are herrre")
             
 //            userDetailsView.nameLabel.text = data.data.
         }

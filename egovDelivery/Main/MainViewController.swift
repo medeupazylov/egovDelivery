@@ -21,17 +21,29 @@ class MainViewController: UIViewController {
     }
     
     @objc func searchButtonAction() {
-//        let userDetailsViewController = UserDetailsViewController()
+        let userDetailsViewController = UserDetailsViewController()
+        userDetailsViewController.modalPresentationStyle = .fullScreen
+        presentDetail(userDetailsViewController)
+        
         print("Button pressed")
-        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
+        networkService.performRequest(nationalId: "", requestId: "", completion: { [self] orderData, error in
             if error != nil { return }
             
             guard let orderData = orderData else { return }
             
-            print(orderData)
-//            userDetailsViewController.orderData = orderData
-            
+//            print(orderData)
+            userDetailsViewController.orderData = orderData
         })
+    }
+    
+    private func presentDetail(_ viewControllerToPresent: UIViewController) {
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(viewControllerToPresent, animated: false, completion: nil)
     }
 
     

@@ -48,25 +48,25 @@ final class UserDetailsView : UIView {
     
     let addressLabel = LabelSampleView(string: "Адрес доставки", style: "SemiBold", size: 30)
     
-    let regionAddress = InputTextField(placeholderText: "Область")
+    let regionAddress = InputTextField(placeholderText: "Область", textFieldHeight: 50)
     
-    let cityAddress = InputTextField(placeholderText: "Город")
+    let cityAddress = InputTextField(placeholderText: "Город", textFieldHeight: 50)
     
-    let streetAddress = InputTextField(placeholderText: "Улица")
+    let streetAddress = InputTextField(placeholderText: "Улица", textFieldHeight: 50)
     
-    let apartmentAddress = InputTextField(placeholderText: "Номер Дома")
+    let apartmentAddress = InputTextField(placeholderText: "Номер Дома", textFieldHeight: 50)
     
-    let flatNumAddress = InputTextField(placeholderText: "Квартира")
+    let flatNumAddress = InputTextField(placeholderText: "Квартира", textFieldHeight: 50)
     
-    let gateNumAddress = InputTextField(placeholderText: "Подъезд")
+    let gateNumAddress = InputTextField(placeholderText: "Подъезд", textFieldHeight: 50)
     
-    let floorNumAddress = InputTextField(placeholderText: "Этаж")
+    let floorNumAddress = InputTextField(placeholderText: "Этаж", textFieldHeight: 50)
     
-    let blockNumAddress = InputTextField(placeholderText: "Корпус")
+    let blockNumAddress = InputTextField(placeholderText: "Корпус", textFieldHeight: 50)
     
-    let apartmentNameAddress = InputTextField(placeholderText: "Наименование ЖК")
+    let apartmentNameAddress = InputTextField(placeholderText: "Наименование ЖК", textFieldHeight: 50)
     
-    let additionAddress = InputTextField(placeholderText: "Дополнительная Информация")
+    let additionAddress = InputTextField(placeholderText: "Дополнительная Информация", textFieldHeight: 50)
     
     let scrollView : UIScrollView = {
         let scroll = UIScrollView()
@@ -117,7 +117,7 @@ final class UserDetailsView : UIView {
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor(red: 19/255, green: 125/255, blue: 197/255, alpha: 1.0).cgColor
         button.setAttributedTitle(NSAttributedString(string: "Приму я", attributes: [
-            NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 15),
+            NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 15)!,
             NSAttributedString.Key.foregroundColor : UIColor(red: 19/255, green: 125/255, blue: 197/255, alpha: 1.0)]), for: .normal)
         return button
     }()
@@ -129,7 +129,7 @@ final class UserDetailsView : UIView {
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.lightGray.cgColor
         button.setAttributedTitle(NSAttributedString(string: "Примет другой \nчеловек", attributes: [
-            NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 15),
+            NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 15)!,
             NSAttributedString.Key.foregroundColor : UIColor.lightGray]), for: .normal)
         return button
     }()
@@ -144,7 +144,7 @@ final class UserDetailsView : UIView {
         button.backgroundColor = UIColor(red: 19/255, green: 125/255, blue: 197/255, alpha: 1.0)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setAttributedTitle(NSAttributedString(string: "Перейти к оплате", attributes: [
-            NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 15),
+            NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 15)!,
             NSAttributedString.Key.foregroundColor : UIColor.white]), for: .normal)
         return button
     }()
