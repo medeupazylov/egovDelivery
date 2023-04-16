@@ -21,7 +21,10 @@ class MainViewController: UIViewController {
     }
     
     @objc func searchButtonAction() {
-        print("pressed")
+        let userDetailsViewController = UserDetailsViewController()
+        userDetailsViewController.modalPresentationStyle = .fullScreen
+        presentDetail(userDetailsViewController)
+        
         networkService.makeRequest(nationalId: "021007551031", completion: {flData, error in
             if error != nil { print (error)
                 return }
@@ -47,7 +50,16 @@ class MainViewController: UIViewController {
 //        })
     }
 
-    
+    private func presentDetail(_ viewControllerToPresent: UIViewController) {
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(viewControllerToPresent, animated: false, completion: nil)
+    }
+
 }
 
 extension MainViewController: UITextFieldDelegate {
