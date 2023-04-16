@@ -60,14 +60,14 @@ final class MainView: UIView {
     
     
     let idTextField: InputTextField = {
-        let textField = InputTextField(placeholderText: "Введите свой ИИН")
+        let textField = InputTextField(placeholderText: "Введите свой ИИН", textFieldHeight: 55)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     } ()
     
     
     let requestTextField: InputTextField = {
-        let textField = InputTextField(placeholderText: "Введите номер вашего заказа")
+        let textField = InputTextField(placeholderText: "Введите номер вашего заказа", textFieldHeight: 55)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     } ()
@@ -78,7 +78,7 @@ final class MainView: UIView {
         button.backgroundColor = constants.buttonColor
         button.layer.cornerRadius = 25.0
         button.setAttributedTitle(NSAttributedString(string: "ПОИСК", attributes: [
-            NSAttributedString.Key.font : UIFont(name: "Helvetica", size: 20)!,
+            NSAttributedString.Key.font : UIFont(name: "Montserrat-SemiBold", size: 20)!,
             NSAttributedString.Key.foregroundColor : UIColor.white
         ]), for: .normal)
         return button

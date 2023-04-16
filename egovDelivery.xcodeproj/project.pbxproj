@@ -87,25 +87,57 @@
 		DEA6C6D629EAA0C5009CA77A /* egovDelivery */ = {
 			isa = PBXGroup;
 			children = (
+				DEA6C6F829EB77E5009CA77A /* Main */,
+				DEA6C6F929EB780B009CA77A /* UserDetails */,
+				DEA6C6FA29EB784E009CA77A /* CustomViews */,
 				70B3BB9529EB53F800A608E6 /* Fonts */,
-				DEA6C6ED29EAB271009CA77A /* Constants.swift */,
 				DEA6C6F129EB0AAD009CA77A /* NetworkService.swift */,
-				70B3BBA029EB543B00A608E6 /* UserDetailsViewController.swift */,
-				70B3BB9E29EB543600A608E6 /* UserDetailsView.swift */,
-				70B3BB9C29EB543000A608E6 /* LabelSampleView.swift */,
-				70B3BB9A29EB541300A608E6 /* CheckBoxView.swift */,
-				DEA6C6EB29EAB16F009CA77A /* MainView.swift */,
-				DEA6C6EF29EAD4B1009CA77A /* InputTextField.swift */,
+				DEA6C6ED29EAB271009CA77A /* Constants.swift */,
 				DEA6C6D729EAA0C5009CA77A /* AppDelegate.swift */,
 				DEA6C6D929EAA0C5009CA77A /* SceneDelegate.swift */,
-				DEA6C6DB29EAA0C5009CA77A /* MainViewController.swift */,
 				DEA6C6E029EAA0C6009CA77A /* Assets.xcassets */,
 				DEA6C6E229EAA0C6009CA77A /* LaunchScreen.storyboard */,
 				DEA6C6E529EAA0C6009CA77A /* Info.plist */,
-				DEA6C6F429EB0B7B009CA77A /* OrderData.swift */,
-				70B3BBA229EB645700A608E6 /* FLData.swift */,
+				DEA6C6FB29EB7AA9009CA77A /* Models */,
 			);
 			path = egovDelivery;
+			sourceTree = "<group>";
+		};
+		DEA6C6F829EB77E5009CA77A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				DEA6C6DB29EAA0C5009CA77A /* MainViewController.swift */,
+				DEA6C6EB29EAB16F009CA77A /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		DEA6C6F929EB780B009CA77A /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				70B3BB9E29EB543600A608E6 /* UserDetailsView.swift */,
+				70B3BBA029EB543B00A608E6 /* UserDetailsViewController.swift */,
+			);
+			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		DEA6C6FA29EB784E009CA77A /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				70B3BB9C29EB543000A608E6 /* LabelSampleView.swift */,
+				70B3BB9A29EB541300A608E6 /* CheckBoxView.swift */,
+				DEA6C6EF29EAD4B1009CA77A /* InputTextField.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		DEA6C6FB29EB7AA9009CA77A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70B3BBA229EB645700A608E6 /* FLData.swift */,
+				DEA6C6F429EB0B7B009CA77A /* OrderData.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

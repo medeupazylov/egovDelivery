@@ -2,16 +2,21 @@ import UIKit
 
 final class InputTextField: UIView {
     
+  
+    
     let constants = Constants()
     let text: String
+    var height: Double = 50
+    
     var delegate: UITextFieldDelegate? {
         didSet{
             customTextField.delegate = delegate
         }
     }
     
-    init(placeholderText: String) {
+    init(placeholderText: String, textFieldHeight: Double) {
         text = placeholderText
+        height = textFieldHeight
         super.init(frame: .zero)
         setupView()
         setupLayout()
@@ -31,7 +36,7 @@ final class InputTextField: UIView {
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-            self.heightAnchor.constraint(equalToConstant: 50),
+            self.heightAnchor.constraint(equalToConstant: height),
             customTextField.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 15),
             customTextField.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -10),
             customTextField.topAnchor.constraint(equalTo: self.topAnchor),
