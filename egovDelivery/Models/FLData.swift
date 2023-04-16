@@ -1,6 +1,7 @@
 import UIKit
 
 struct FLData: Codable {
-    let data: DataModel
-    let status: String
+    let iin: String
+    let lastName : String
+    let firstName : String
 }
