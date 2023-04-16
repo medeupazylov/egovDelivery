@@ -21,25 +21,35 @@ class MainViewController: UIViewController {
     }
     
     @objc func searchButtonAction() {
-//        let userDetailsViewController = UserDetailsViewController()
-//        userDetailsViewController.modalPresentationStyle = .fullScreen
-//        presentDetail(userDetailsViewController)
+        let userDetailsViewController = UserDetailsViewController()
+        userDetailsViewController.modalPresentationStyle = .fullScreen
+        presentDetail(userDetailsViewController)
         
-        print("Button pressed")
-        
-        networkService.makeRequest(nationalId: "020924551400", completion: {bmg, error in
-            
-            guard let bmg = bmg else {
-                return
-            }
-            print(bmg.firstName)
+        networkService.makeRequest(nationalId: "021007551031", completion: {flData, error in
+            if error != nil { print (error)
+                return }
+            guard let flData = flData else { return }
 
-            
+            print(flData)
         })
         
-    
+        networkService.doRequest(nationalId: "020924551400", completion: {bmgData, error in
+            if error != nil { print (error)
+                return }
+            guard let bmgData = bmgData else { return }
+            
+            print(bmgData.phone)
+        })
+        
+//        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
+//            if error != nil { return }
+//
+//            guard let orderData = orderData else { return }
+//
+//            print(orderData)
+//        })
     }
-    
+
     private func presentDetail(_ viewControllerToPresent: UIViewController) {
         let transition = CATransition()
         transition.duration = 0.4
@@ -50,7 +60,6 @@ class MainViewController: UIViewController {
         self.present(viewControllerToPresent, animated: false, completion: nil)
     }
 
-    
 }
 
 extension MainViewController: UITextFieldDelegate {
