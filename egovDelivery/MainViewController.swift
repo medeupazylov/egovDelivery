@@ -21,17 +21,31 @@ class MainViewController: UIViewController {
     }
     
     @objc func searchButtonAction() {
-//        let userDetailsViewController = UserDetailsViewController()
-        print("Button pressed")
-        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
-            if error != nil { return }
+        print("pressed")
+//        networkService.makeRequest(nationalId: "021007551031", completion: {flData, error in
+//            if error != nil { print (error)
+//                return }
+//            guard let flData = flData else { return }
+//            
+//            print(flData)
+//        })
+        
+        networkService.doRequest(nationalId: "020924551400", completion: {bmgData, error in
+            if error != nil { print (error)
+                return }
+            guard let bmgData = bmgData else { return }
             
-            guard let orderData = orderData else { return }
-            
-            print(orderData)
-//            userDetailsViewController.orderData = orderData
-            
+            print(bmgData)
         })
+//        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
+//            if error != nil { return }
+//
+//            guard let orderData = orderData else { return }
+//
+//            print(orderData)
+//            userDetailsViewController.orderData = orderData
+//
+//        })
     }
 
     
