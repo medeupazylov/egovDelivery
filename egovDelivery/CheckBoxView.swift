@@ -12,6 +12,8 @@ final class CheckBoxView : UIView {
     
     let constants = Constants()
     
+    var isChecked = false
+    
     let checkBox : UIButton = {
         let button = UIButton()
         button.setImage(UIImage(systemName: "square"), for: .normal)

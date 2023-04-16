@@ -15,7 +15,6 @@ final class UserDetailsView : UIView {
         let text = UILabel()
         text.textAlignment = .left
         text.textColor = .white
-        text.text = "Здравствуйте,\nMedeu!"
         text.translatesAutoresizingMaskIntoConstraints = false
         text.font = UIFont(name: "Montserrat-SemiBold", size: 40)
         text.numberOfLines = 0
@@ -25,26 +24,77 @@ final class UserDetailsView : UIView {
     
     let greetingView : UIView = {
         let view = UIView()
-//        view.backgroundColor = UIColor(red: 109/255, green: 214/255, blue: 194/255, alpha: 1.0)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     let orderNumLabel = LabelSampleView(string: "Номер заказа", style: "SemiBold", size: 15)
     
+    let orderNum : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
+        return tickerLabel
+    }()
+    
     let serviceNameLabel = LabelSampleView(string: "Наименование услуги", style: "SemiBold", size: 15)
     
+    let serviceName : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.numberOfLines = 0
+        tickerLabel.lineBreakMode = .byWordWrapping
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
+        return tickerLabel
+    }()
+    
     let departmentLabel = LabelSampleView(string: "Отделение", style: "SemiBold", size: 15)
+    
+    let department : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
+        return tickerLabel
+    }()
     
     let clientInfoLabel = LabelSampleView(string: "Данные \nполучателя", style: "SemiBold", size: 30)
     
     let nameLabel = LabelSampleView(string: "Имя", style: "SemiBold", size: 15)
     
+    let name : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.textColor = .black
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
+        return tickerLabel
+    }()
+    
     let surnameLabel = LabelSampleView(string: "Фамилия", style: "SemiBold", size: 15)
+    
+    let surname : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
+        return tickerLabel
+    }()
     
     let idLabel = LabelSampleView(string: "ИИН", style: "SemiBold", size: 15)
     
+    let id : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
+        return tickerLabel
+    }()
+    
     let phoneNumLabel = LabelSampleView(string: "Номер телефона", style: "SemiBold", size: 15)
+    
+    let phoneNum : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 20)
+        return tickerLabel
+    }()
     
     let addressLabel = LabelSampleView(string: "Адрес доставки", style: "SemiBold", size: 30)
     
@@ -136,7 +186,27 @@ final class UserDetailsView : UIView {
     
     let acceptCheck = CheckBoxView(string: "Я принимаю условия публичного договора-оферты")
     
+    let notAcceptCheck : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 10)
+        tickerLabel.text = "*** В целях безопасности поставьте галочку ***"
+        tickerLabel.textColor = .red
+//        tickerLabel.isHidden = false
+        return tickerLabel
+    }()
+    
     let agreeCheck = CheckBoxView(string: "Я ознакомлен и согласен с условиями политики конфиденциальности и персональных данных")
+    
+    let notAgreeCheck : UILabel = {
+        let tickerLabel = UILabel()
+        tickerLabel.translatesAutoresizingMaskIntoConstraints = false
+        tickerLabel.font = UIFont(name: "Montserrat-Bold", size: 10)
+        tickerLabel.text = "*** В целях безопасности поставьте галочку ***"
+        tickerLabel.textColor = .red
+//        tickerLabel.isHidden = true
+        return tickerLabel
+    }()
     
     let payButton : UIButton = {
         let button = UIButton()
@@ -163,13 +233,20 @@ final class UserDetailsView : UIView {
         stackView.addArrangedSubview(infoStack)
         greetingView.addSubview(greetingLabel)
         infoStack.addArrangedSubview(orderNumLabel)
+        infoStack.addArrangedSubview(orderNum)
         infoStack.addArrangedSubview(serviceNameLabel)
+        infoStack.addArrangedSubview(serviceName)
         infoStack.addArrangedSubview(departmentLabel)
+        infoStack.addArrangedSubview(department)
         infoStack.addArrangedSubview(clientInfoLabel)
         infoStack.addArrangedSubview(idLabel)
+        infoStack.addArrangedSubview(id)
         infoStack.addArrangedSubview(nameLabel)
+        infoStack.addArrangedSubview(name)
         infoStack.addArrangedSubview(surnameLabel)
+        infoStack.addArrangedSubview(surname)
         infoStack.addArrangedSubview(phoneNumLabel)
+        infoStack.addArrangedSubview(phoneNum)
         infoStack.addArrangedSubview(addressLabel)
         infoStack.addArrangedSubview(regionAddress)
         infoStack.addArrangedSubview(cityAddress)
@@ -185,7 +262,9 @@ final class UserDetailsView : UIView {
         responsibilityStack.addArrangedSubview(responsibilyMeButton)
         responsibilityStack.addArrangedSubview(responsibilyOtherButton)
         infoStack.addArrangedSubview(acceptCheck)
+        infoStack.addArrangedSubview(notAcceptCheck)
         infoStack.addArrangedSubview(agreeCheck)
+        infoStack.addArrangedSubview(notAgreeCheck)
         infoStack.addArrangedSubview(payButton)
     }
     
@@ -214,15 +293,16 @@ final class UserDetailsView : UIView {
         responsibilyOtherButton.heightAnchor.constraint(equalToConstant: 50),
         
         payButton.heightAnchor.constraint(equalToConstant: 50),
-        acceptCheck.heightAnchor.constraint(equalToConstant: 50),
-        agreeCheck.heightAnchor.constraint(equalToConstant: 70)
+        acceptCheck.heightAnchor.constraint(equalToConstant: 70),
+        agreeCheck.heightAnchor.constraint(equalToConstant: 90),
+        notAgreeCheck.heightAnchor.constraint(equalToConstant: 30),
+        notAgreeCheck.centerXAnchor.constraint(equalTo: infoStack.centerXAnchor),
+        notAcceptCheck.heightAnchor.constraint(equalToConstant: 30),
+        notAcceptCheck.centerXAnchor.constraint(equalTo: infoStack.centerXAnchor)
         ])
         for view in infoStack.arrangedSubviews{
             makeLayouts(view: view)
         }
-        makeLayouts(view: acceptCheck)
-        makeLayouts(view: agreeCheck)
-        scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: stackView.bounds.height)
     }
     
     func makeLayouts(view: UIView){

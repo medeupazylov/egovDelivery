@@ -7,7 +7,7 @@ final class NetworkService {
 
     
     func performRequest( nationalId: String, requestId: String, completion: @escaping (OrderData?, Error?) -> Void) {
-        let urlString = "http://hakaton.gov4c.kz/vshep-api/con-sync-service?requestId=\(requestId)&requestIIN=\(nationalId)&token=\(token)"
+//        let urlString = "http://hakaton.gov4c.kz/vshep-api/con-sync-service?requestId=\(requestId)&requestIIN=\(nationalId)&token=\(token)"
         
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)

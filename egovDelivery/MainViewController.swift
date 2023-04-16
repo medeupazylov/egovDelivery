@@ -29,8 +29,10 @@ class MainViewController: UIViewController {
             if error != nil { print (error)
                 return }
             guard let flData = flData else { return }
-
-            print(flData)
+            
+            DispatchQueue.main.async{
+                userDetailsViewController.fldata = flData
+            }
         })
         
         networkService.doRequest(nationalId: "020924551400", completion: {bmgData, error in
@@ -38,16 +40,20 @@ class MainViewController: UIViewController {
                 return }
             guard let bmgData = bmgData else { return }
             
-            print(bmgData.phone)
+            DispatchQueue.main.async{
+                userDetailsViewController.bmgdata = bmgData
+            }
         })
         
-//        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
-//            if error != nil { return }
-//
-//            guard let orderData = orderData else { return }
-//
-//            print(orderData)
-//        })
+        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
+            if error != nil { return }
+
+            guard let orderData = orderData else { return }
+            
+            DispatchQueue.main.async{
+                userDetailsViewController.orderdata = orderData
+            }
+        })
     }
 
     private func presentDetail(_ viewControllerToPresent: UIViewController) {
