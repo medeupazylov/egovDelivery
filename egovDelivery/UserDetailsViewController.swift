@@ -10,11 +10,12 @@ import UIKit
 class UserDetailsViewController: UIViewController {
     
     let userDetailsView = UserDetailsView()
-    var orderData : OrderData?{
+    var fldata : FLData?{
         didSet{
-            guard let data = orderData else {return}
-            
-//            userDetailsView.nameLabel.text = data.data.
+            guard let fldata = fldata else {return}
+            userDetailsView.nameLabel.text = fldata.firstName
+            userDetailsView.surnameLabel.text = fldata.lastName
+            userDetailsView.idLabel.text = fldata.iin
         }
     }
     

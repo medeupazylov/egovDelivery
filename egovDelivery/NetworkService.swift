@@ -47,7 +47,6 @@ final class NetworkService {
             request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
 
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                print(error)
                 if let error = error {
                     completion(nil, error)
                     return
@@ -60,6 +59,7 @@ final class NetworkService {
                     completion(nil, nil)
                     return
                 }
+                completion(flData, nil)
             }
             
             task.resume()

@@ -22,29 +22,28 @@ class MainViewController: UIViewController {
     
     @objc func searchButtonAction() {
         print("pressed")
-//        networkService.makeRequest(nationalId: "021007551031", completion: {flData, error in
-//            if error != nil { print (error)
-//                return }
-//            guard let flData = flData else { return }
-//            
-//            print(flData)
-//        })
+        networkService.makeRequest(nationalId: "021007551031", completion: {flData, error in
+            if error != nil { print (error)
+                return }
+            guard let flData = flData else { return }
+
+            print(flData)
+        })
         
         networkService.doRequest(nationalId: "020924551400", completion: {bmgData, error in
             if error != nil { print (error)
                 return }
             guard let bmgData = bmgData else { return }
             
-            print(bmgData)
+            print(bmgData.phone)
         })
+        
 //        networkService.performRequest(nationalId: "", requestId: "", completion: { orderData, error in
 //            if error != nil { return }
 //
 //            guard let orderData = orderData else { return }
 //
 //            print(orderData)
-//            userDetailsViewController.orderData = orderData
-//
 //        })
     }
 
